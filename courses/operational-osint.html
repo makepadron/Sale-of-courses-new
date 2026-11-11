@@ -1,0 +1,324 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Операционное руководство OSINT — CLI INTELLIGENCE</title>
+  <meta name="description" content="Операционное руководство OSINT: организация разведывательных процессов, планирование исследований, сбор данных, анализ цифровой инфраструктуры и подготовка аналитических отчётов.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#090909">
+
+  <link rel="canonical" href="https://makepadron.github.io/Sale-of-courses/courses/operational-osint.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="CLI INTELLIGENCE">
+  <meta property="og:title" content="Операционное руководство OSINT">
+  <meta property="og:description" content="Организация и проведение комплексных OSINT-исследований.">
+  <meta property="og:url" content="https://makepadron.github.io/Sale-of-courses/courses/operational-osint.html">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Операционное руководство OSINT">
+  <meta name="twitter:description" content="Системный подход к цифровой разведке.">
+
+  <link rel="stylesheet" href="../assets/style.css">
+  <script src="../assets/app.js" defer></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Операционное руководство OSINT",
+    "description": "Программа по планированию, организации и проведению комплексных исследований на основе открытых источников.",
+    "provider": {
+      "@type": "Organization",
+      "name": "CLI INTELLIGENCE",
+      "url": "https://makepadron.github.io/Sale-of-courses/"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "7000",
+      "priceCurrency": "RUB",
+      "availability": "https://schema.org/InStock",
+      "url": "https://makepadron.github.io/Sale-of-courses/courses/operational-osint.html"
+    }
+  }
+  </script>
+
+  <style>
+    .course-detail {
+      padding: 100px 0;
+      min-height: 75vh;
+    }
+
+    .course-detail-content {
+      max-width: 850px;
+    }
+
+    .course-detail h1 {
+      margin-top: 25px;
+      font-size: clamp(38px, 6vw, 66px);
+      line-height: 1.15;
+      letter-spacing: -2px;
+    }
+
+    .course-detail-description {
+      margin-top: 25px;
+      color: #aaa;
+      font-size: 16px;
+      line-height: 1.9;
+      max-width: 700px;
+    }
+
+    .course-detail-price {
+      margin-top: 35px;
+      font-size: 32px;
+      font-weight: 700;
+    }
+
+    .course-detail-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    .course-detail-block {
+      margin-top: 75px;
+      padding-top: 35px;
+      border-top: 1px solid #292929;
+    }
+
+    .course-detail-block h2 {
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+
+    .course-detail-block p,
+    .course-detail-block li {
+      color: #999;
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .course-detail-block ul {
+      padding-left: 22px;
+    }
+
+    .course-detail-block li {
+      padding: 5px 0;
+    }
+
+    .course-detail-note {
+      margin-top: 25px;
+      padding: 20px;
+      border: 1px solid #292929;
+      border-radius: 10px;
+      color: #999;
+      font-size: 12px;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="../index.html">
+        <span class="logo-mark">CLI</span>
+        <span class="logo-text">INTELLIGENCE</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Навигация">
+        <a href="../index.html#about">О проекте</a>
+        <a href="../index.html#catalog">Каталог</a>
+        <a href="../index.html#author">Об авторе</a>
+        <a href="https://t.me/cli_intelligence" target="_blank" rel="noopener noreferrer">Контакты</a>
+      </nav>
+
+      <button class="cart-button" id="openCart" type="button">
+        Корзина <span id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="course-detail">
+      <div class="container">
+        <div class="course-detail-content">
+          <div class="section-label">CLI INTELLIGENCE / COURSE 04</div>
+
+          <h1>Операционное руководство OSINT</h1>
+
+          <p class="course-detail-description">
+            Программа посвящена организации полноценного разведывательного
+            процесса: от постановки задачи и выбора источников до сбора,
+            проверки, анализа и представления результатов. Курс рассматривает
+            OSINT как системную аналитическую деятельность, а не набор
+            отдельных поисковых инструментов.
+          </p>
+
+          <div class="course-detail-price">7 000 ₽</div>
+
+          <div class="course-detail-actions">
+            <button class="button button-primary" id="detailAddToCart" type="button">
+              Добавить в корзину
+            </button>
+
+            <a class="button button-secondary" href="../index.html#catalog">
+              Вернуться в каталог
+            </a>
+          </div>
+
+          <div class="course-detail-block">
+            <h2>О программе</h2>
+            <p>
+              В центре программы находится полный цикл OSINT-исследования.
+              Обучение охватывает постановку аналитической задачи, определение
+              границ исследования, выбор подходящих источников, планирование
+              сбора сведений, оценку качества данных и формирование выводов.
+            </p>
+            <p>
+              Отдельное внимание уделяется воспроизводимости: другой аналитик
+              должен иметь возможность понять, откуда получены сведения,
+              каким способом они проверялись и на чём основан итоговый вывод.
+            </p>
+          </div>
+
+          <div class="course-detail-block">
+            <h2>Основные направления обучения</h2>
+            <ul>
+              <li>Формирование требований к разведывательному исследованию.</li>
+              <li>Постановка целей, вопросов и проверяемых гипотез.</li>
+              <li>Определение границ, ограничений и критериев завершения работы.</li>
+              <li>Построение карты источников и определение их приоритетности.</li>
+              <li>Разработка последовательности сбора информации.</li>
+              <li>Поисковые операторы и специализированные поисковые системы.</li>
+              <li>Исследование цифровых идентификаторов и публичных профилей.</li>
+              <li>Анализ доменов, DNS, IP-адресов и сетевых сервисов.</li>
+              <li>Исследование веб-ресурсов и истории их изменений.</li>
+              <li>Геопространственный анализ и проверка визуальных материалов.</li>
+              <li>Сопоставление сведений из независимых источников.</li>
+              <li>Оценка достоверности, полноты и актуальности данных.</li>
+              <li>Построение графов связей и аналитических моделей.</li>
+              <li>Фиксация источников и сохранение доказательной базы.</li>
+              <li>Подготовка структурированных аналитических отчётов.</li>
+              <li>Контроль качества и повторная проверка выводов.</li>
+            </ul>
+          </div>
+
+          <div class="course-detail-block">
+            <h2>Организация исследовательского процесса</h2>
+            <p>
+              Практическая часть рассматривает, как распределять задачи
+              на этапы, документировать действия, вести журнал исследования
+              и контролировать качество собранной информации.
+            </p>
+            <p>
+              Обучающийся знакомится с принципами работы с несколькими
+              источниками одновременно, устранением противоречий и
+              предотвращением аналитических ошибок.
+            </p>
+          </div>
+
+          <div class="course-detail-block">
+            <h2>Аналитические результаты</h2>
+            <p>
+              Итогом исследования должен быть не просто список найденных
+              ссылок, а понятный аналитический материал: поставленная задача,
+              использованные источники, методика проверки, подтверждённые
+              факты, ограничения и обоснованные выводы.
+            </p>
+          </div>
+
+          <div class="course-detail-block">
+            <h2>Для кого предназначен курс</h2>
+            <p>
+              Программа подойдёт тем, кто уже знаком с базовыми принципами
+              OSINT и хочет перейти к более организованной работе:
+              исследователям, аналитикам, специалистам по информационной
+              безопасности и обучающимся, которым необходима системная
+              методология проведения цифровых исследований.
+            </p>
+          </div>
+
+          <div class="course-detail-block">
+            <h2>Стоимость</h2>
+            <p>
+              Полная стоимость программы:
+              <strong>7 000 ₽ / 83 $</strong>.
+            </p>
+
+            <div class="course-detail-note">
+              Обучение ориентировано на законное использование открытых
+              источников. Программа не предполагает незаконный доступ
+              к системам, получение закрытых данных или нарушение
+              частной жизни.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="logo footer-logo" href="../index.html">
+        <span class="logo-mark">CLI</span>
+        <span class="logo-text">INTELLIGENCE</span>
+      </a>
+
+      <p>© 2026 CLI INTELLIGENCE. Все права защищены.</p>
+
+      <a href="https://t.me/cli_intelligence" target="_blank" rel="noopener noreferrer">
+        Telegram автора
+      </a>
+    </div>
+  </footer>
+
+  <div class="cart-overlay" id="cartOverlay" hidden>
+    <div class="cart-panel" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+      <div class="cart-header">
+        <h2 id="cartTitle">Корзина</h2>
+        <button type="button" id="closeCart" aria-label="Закрыть корзину">×</button>
+      </div>
+
+      <div class="cart-items" id="cartItems">
+        <p class="cart-empty">Корзина пока пуста.</p>
+      </div>
+
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>Итого</span>
+          <strong id="cartTotal">0 ₽</strong>
+        </div>
+
+        <button class="button button-primary checkout-button" id="checkoutButton" type="button" disabled>
+          Оформить заказ через Telegram
+        </button>
+
+        <p class="cart-note">
+          После перехода в Telegram проверьте сообщение и отправьте
+          его автору для оформления заказа.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("detailAddToCart").addEventListener("click", function () {
+      const cart = JSON.parse(
+        localStorage.getItem("cli_intelligence_cart") || "[]"
+      );
+
+      if (!cart.includes(4)) {
+        cart.push(4);
+        localStorage.setItem("cli_intelligence_cart", JSON.stringify(cart));
+      }
+
+      this.textContent = "Добавлено в корзину";
+    });
+  </script>
+</body>
+</html>
