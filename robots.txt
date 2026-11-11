@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://makepadron.github.io/Sale-of-courses/sitemap.xml
+Sitemap: https://makepadron.github.io/Sale-of-courses-new/sitemap.xml
