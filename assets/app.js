@@ -479,3 +479,4 @@ document.addEventListener("keydown", event => {
 /* Запуск сайта */
 
 initialize();
+
