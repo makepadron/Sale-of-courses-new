@@ -1,0 +1,315 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>OSINT Core Collection — базовый инструментарий | CLI INTELLIGENCE</title>
+  <meta name="description" content="OSINT Core Collection — подборка основных инструментов для поиска, сбора и анализа открытой информации. Практическое знакомство с поисковыми системами, доменами, изображениями и цифровыми идентификаторами.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#090909">
+
+  <link rel="canonical" href="https://makepadron.github.io/Sale-of-courses/courses/osint-core-collection.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="CLI INTELLIGENCE">
+  <meta property="og:title" content="OSINT Core Collection: базовый инструментарий">
+  <meta property="og:description" content="Основные инструменты и методы практической цифровой разведки.">
+  <meta property="og:url" content="https://makepadron.github.io/Sale-of-courses/courses/osint-core-collection.html">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="OSINT Core Collection">
+  <meta name="twitter:description" content="Базовый инструментарий OSINT.">
+
+  <link rel="stylesheet" href="../assets/style.css">
+  <script src="../assets/app.js" defer></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "OSINT Core Collection: базовый инструментарий",
+    "description": "Обучение применению основных инструментов для поиска, сбора и анализа информации из открытых источников.",
+    "provider": {
+      "@type": "Organization",
+      "name": "CLI INTELLIGENCE",
+      "url": "https://makepadron.github.io/Sale-of-courses/"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "1500",
+      "priceCurrency": "RUB",
+      "availability": "https://schema.org/InStock",
+      "url": "https://makepadron.github.io/Sale-of-courses/courses/osint-core-collection.html"
+    }
+  }
+  </script>
+
+  <style>
+    .course-detail {
+      padding: 100px 0;
+      min-height: 75vh;
+    }
+
+    .course-detail-content {
+      max-width: 850px;
+    }
+
+    .course-detail h1 {
+      margin-top: 25px;
+      font-size: clamp(38px, 6vw, 66px);
+      line-height: 1.15;
+      letter-spacing: -2px;
+    }
+
+    .course-detail-description {
+      margin-top: 25px;
+      color: #aaa;
+      font-size: 16px;
+      line-height: 1.9;
+      max-width: 700px;
+    }
+
+    .course-detail-price {
+      margin-top: 35px;
+      font-size: 32px;
+      font-weight: 700;
+    }
+
+    .course-detail-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    .course-detail-block {
+      margin-top: 75px;
+      padding-top: 35px;
+      border-top: 1px solid #292929;
+    }
+
+    .course-detail-block h2 {
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+
+    .course-detail-block p,
+    .course-detail-block li {
+      color: #999;
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .course-detail-block ul {
+      padding-left: 22px;
+    }
+
+    .course-detail-block li {
+      padding: 5px 0;
+    }
+
+    .course-detail-note {
+      margin-top: 25px;
+      padding: 20px;
+      border: 1px solid #292929;
+      border-radius: 10px;
+      color: #999;
+      font-size: 12px;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="../index.html">
+        <span class="logo-mark">CLI</span>
+        <span class="logo-text">INTELLIGENCE</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Навигация">
+        <a href="../index.html#about">О проекте</a>
+        <a href="../index.html#catalog">Каталог</a>
+        <a href="../index.html#author">Об авторе</a>
+        <a href="https://t.me/cli_intelligence" target="_blank" rel="noopener noreferrer">Контакты</a>
+      </nav>
+
+      <button class="cart-button" id="openCart" type="button">
+        Корзина <span id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="course-detail">
+      <div class="container">
+        <div class="course-detail-content">
+          <div class="section-label">CLI INTELLIGENCE / COURSE 05</div>
+
+          <h1>OSINT Core Collection: базовый инструментарий</h1>
+
+          <p class="course-detail-description">
+            Компактная программа для знакомства с основными инструментами
+            OSINT. Материал помогает понять назначение популярных сервисов,
+            научиться выбирать подходящие средства для разных задач
+            и выстроить базовый рабочий набор исследователя.
+          </p>
+
+          <div class="course-detail-price">1 500 ₽</div>
+
+          <div class="course-detail-actions">
+            <button class="button button-primary" id="detailAddToCart" type="button">
+              Добавить в корзину
+            </button>
+
+            <a class="button button-secondary" href="../index.html#catalog">
+              Вернуться в каталог
+            </a>
+          </div>
+
+          <div class="course-detail-block">
+            <h2>О программе</h2>
+            <p>
+              В OSINT важно не количество установленных программ,
+              а понимание того, какую задачу решает каждый инструмент,
+              какие данные он использует и насколько надёжны полученные
+              результаты. Эта программа знакомит с основными категориями
+              инструментов и принципами их применения.
+            </p>
+          </div>
+
+          <div class="course-detail-block">
+            <h2>Категории инструментов</h2>
+            <ul>
+              <li>Поисковые системы и расширенный поиск.</li>
+              <li>Поиск по именам пользователей и псевдонимам.</li>
+              <li>Sherlock, Maigret и WhatsMyName.</li>
+              <li>Проверка публичных профилей и цифровых идентификаторов.</li>
+              <li>Поиск информации о доменах и DNS.</li>
+              <li>Инструменты исследования IP-адресов.</li>
+              <li>Сервисы анализа веб-технологий.</li>
+              <li>Веб-архивы и просмотр старых версий сайтов.</li>
+              <li>Поиск и обратный поиск изображений.</li>
+              <li>Инструменты анализа метаданных файлов.</li>
+              <li>Геопространственные сервисы и картографические источники.</li>
+              <li>Публичные базы данных компаний.</li>
+              <li>Сервисы проверки сертификатов и сетевой инфраструктуры.</li>
+              <li>Инструменты организации заметок и результатов исследования.</li>
+            </ul>
+          </div>
+
+          <div class="course-detail-block">
+            <h2>Как работать с инструментами</h2>
+            <p>
+              Каждый инструмент рассматривается с точки зрения его назначения,
+              входных данных, основных возможностей и ограничений.
+              Отдельно объясняется, почему результаты одного сервиса
+              необходимо проверять с помощью независимых источников.
+            </p>
+          </div>
+
+          <div class="course-detail-block">
+            <h2>Рабочий набор исследователя</h2>
+            <p>
+              Программа помогает сформировать базовый набор средств
+              для первичного исследования: от поиска публичных сведений
+              до проверки доменов, изображений и цифровых идентификаторов.
+              Инструменты сгруппированы по задачам, чтобы не приходилось
+              искать подходящий сервис с нуля при каждом исследовании.
+            </p>
+          </div>
+
+          <div class="course-detail-block">
+            <h2>Результат обучения</h2>
+            <p>
+              После изучения программы обучающийся будет понимать,
+              какие категории инструментов существуют в OSINT,
+              для чего они применяются, как выбирать подходящий сервис
+              и как проверять результаты его работы.
+            </p>
+          </div>
+
+          <div class="course-detail-block">
+            <h2>Стоимость</h2>
+            <p>
+              Полная стоимость программы:
+              <strong>1 500 ₽ / 17 $</strong>.
+            </p>
+
+            <div class="course-detail-note">
+              Инструменты предназначены для законных исследований
+              общедоступной информации. Использование сервисов должно
+              соответствовать законодательству и правилам самих платформ.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="logo footer-logo" href="../index.html">
+        <span class="logo-mark">CLI</span>
+        <span class="logo-text">INTELLIGENCE</span>
+      </a>
+
+      <p>© 2026 CLI INTELLIGENCE. Все права защищены.</p>
+
+      <a href="https://t.me/cli_intelligence" target="_blank" rel="noopener noreferrer">
+        Telegram автора
+      </a>
+    </div>
+  </footer>
+
+  <div class="cart-overlay" id="cartOverlay" hidden>
+    <div class="cart-panel" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+      <div class="cart-header">
+        <h2 id="cartTitle">Корзина</h2>
+        <button type="button" id="closeCart" aria-label="Закрыть корзину">×</button>
+      </div>
+
+      <div class="cart-items" id="cartItems">
+        <p class="cart-empty">Корзина пока пуста.</p>
+      </div>
+
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>Итого</span>
+          <strong id="cartTotal">0 ₽</strong>
+        </div>
+
+        <button class="button button-primary checkout-button" id="checkoutButton" type="button" disabled>
+          Оформить заказ через Telegram
+        </button>
+
+        <p class="cart-note">
+          После перехода в Telegram проверьте сообщение и отправьте
+          его автору для оформления заказа.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("detailAddToCart").addEventListener("click", function () {
+      const cart = JSON.parse(
+        localStorage.getItem("cli_intelligence_cart") || "[]"
+      );
+
+      if (!cart.includes(5)) {
+        cart.push(5);
+        localStorage.setItem(
+          "cli_intelligence_cart",
+          JSON.stringify(cart)
+        );
+      }
+
+      this.textContent = "Добавлено в корзину";
+    });
+  </script>
+</body>
+</html>
