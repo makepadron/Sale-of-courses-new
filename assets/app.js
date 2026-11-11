@@ -5,6 +5,36 @@ const COURSES_URL = new URL("./courses.json", document.currentScript.src);
 const TELEGRAM_USERNAME = "cli_intelligence";
 const CART_STORAGE_KEY = "cli_intelligence_cart";
 
+/* Изображения для 17 курсов */
+
+const COURSE_IMAGES = {
+  1: "photo-1516321318423-f06f85e504b3",
+  2: "photo-1451187580459-43490279c0fa",
+  3: "photo-1526374965328-7f61d4dc18c5",
+  4: "photo-1558494949-ef010cbdcc31",
+  5: "photo-1518770660439-4636190af475",
+  6: "photo-1460925895917-afdab827c52f",
+  7: "photo-1516321497487-e288fb19713f",
+  8: "photo-1550751827-4bd374c3f58b",
+  9: "photo-1454165804606-c3d57bc86b40",
+  10: "photo-1555949963-ff9fe0c870eb",
+  11: "photo-1519389950473-47ba0277781c",
+  12: "photo-1504639725590-34d0984388bd",
+  13: "photo-1563013544-824ae1b704d3",
+  14: "photo-1551288049-bebda4e38f71",
+  15: "photo-1515879218367-8466d910aaa4",
+  16: "photo-1519389950473-47ba0277781c",
+  17: "photo-1558494949-ef010cbdcc31"
+};
+
+function getCourseImage(id) {
+  const photo = COURSE_IMAGES[id];
+
+  if (!photo) return "";
+
+  return `https://images.unsplash.com/${photo}?auto=format&fit=crop&w=900&q=85`;
+}
+
 let courses = [];
 let cart = loadCart();
 
@@ -135,9 +165,25 @@ function renderCourses() {
 
   elements.grid.innerHTML = filtered.map(course => {
     const isAdded = cart.includes(course.id);
+    const image = getCourseImage(course.id);
 
     return `
       <article class="course-card">
+
+        <div class="course-image">
+          <img
+            src="${escapeHTML(image)}"
+            alt="${escapeHTML(course.title)}"
+            loading="lazy"
+            decoding="async"
+            onerror="this.style.display='none'"
+          >
+          <div class="course-image-overlay"></div>
+          <span class="course-image-number">
+            ${String(course.id).padStart(2, "0")} / 17
+          </span>
+        </div>
+
         <div class="course-number">
           COURSE / ${String(course.id).padStart(2, "0")}
         </div>
