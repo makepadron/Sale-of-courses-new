@@ -1,0 +1,242 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Киберразведка угроз CTI — CLI INTELLIGENCE</title>
+  <meta name="description" content="Курс CTI: основы киберразведки угроз, разведывательный цикл, сбор и анализ индикаторов компрометации, исследование инфраструктуры и подготовка аналитических материалов.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#090909">
+  <link rel="canonical" href="https://makepadron.github.io/Sale-of-courses/courses/cti-fundamentals.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="CLI INTELLIGENCE">
+  <meta property="og:title" content="Киберразведка угроз (CTI): основы и практика">
+  <meta property="og:description" content="Методология Cyber Threat Intelligence: от постановки задачи до аналитического отчёта.">
+  <meta property="og:url" content="https://makepadron.github.io/Sale-of-courses/courses/cti-fundamentals.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Киберразведка угроз CTI">
+  <meta name="twitter:description" content="Основы и практика анализа киберугроз.">
+  <link rel="stylesheet" href="../assets/style.css">
+  <script src="../assets/app.js" defer></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Киберразведка угроз (CTI): основы и практика",
+    "description": "Обучение основам Cyber Threat Intelligence, разведывательному циклу и анализу индикаторов киберугроз.",
+    "provider": {
+      "@type": "Organization",
+      "name": "CLI INTELLIGENCE",
+      "url": "https://makepadron.github.io/Sale-of-courses/"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "2500",
+      "priceCurrency": "RUB",
+      "availability": "https://schema.org/InStock",
+      "url": "https://makepadron.github.io/Sale-of-courses/courses/cti-fundamentals.html"
+    }
+  }
+  </script>
+
+  <style>
+    .course-detail{padding:100px 0;min-height:75vh}
+    .course-detail-content{max-width:850px}
+    .course-detail h1{margin-top:25px;font-size:clamp(38px,6vw,66px);line-height:1.15;letter-spacing:-2px}
+    .course-detail-description{margin-top:25px;color:#aaa;font-size:16px;line-height:1.9;max-width:700px}
+    .course-detail-price{margin-top:35px;font-size:32px;font-weight:700}
+    .course-detail-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:25px}
+    .course-detail-block{margin-top:75px;padding-top:35px;border-top:1px solid #292929}
+    .course-detail-block h2{font-size:26px;margin-bottom:20px}
+    .course-detail-block p,.course-detail-block li{color:#999;font-size:14px;line-height:1.9}
+    .course-detail-block ul{padding-left:22px}
+    .course-detail-block li{padding:5px 0}
+    .course-detail-note{margin-top:25px;padding:20px;border:1px solid #292929;border-radius:10px;color:#999;font-size:12px;line-height:1.8}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="../index.html"><span class="logo-mark">CLI</span><span class="logo-text">INTELLIGENCE</span></a>
+      <nav class="main-nav" aria-label="Навигация">
+        <a href="../index.html#about">О проекте</a>
+        <a href="../index.html#catalog">Каталог</a>
+        <a href="../index.html#author">Об авторе</a>
+        <a href="https://t.me/cli_intelligence" target="_blank" rel="noopener noreferrer">Контакты</a>
+      </nav>
+      <button class="cart-button" id="openCart" type="button">Корзина <span id="cartCount">0</span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="course-detail">
+      <div class="container">
+        <div class="course-detail-content">
+          <div class="section-label">CLI INTELLIGENCE / COURSE 10</div>
+          <h1>Киберразведка угроз (CTI): основы и практика</h1>
+
+          <p class="course-detail-description">
+            Программа знакомит с Cyber Threat Intelligence — направлением
+            информационной безопасности, которое изучает киберугрозы,
+            инфраструктуру злоумышленников, индикаторы компрометации
+            и методы превращения технических данных в полезную
+            аналитическую информацию.
+          </p>
+
+          <div class="course-detail-price">2 500 ₽</div>
+
+          <div class="course-detail-actions">
+            <button class="button button-primary" id="detailAddToCart" type="button">Добавить в корзину</button>
+            <a class="button button-secondary" href="../index.html#catalog">Вернуться в каталог</a>
+          </div>
+
+          <div class="course-detail-block">
+            <h2>Что такое CTI</h2>
+            <p>
+              CTI — это сбор, обработка, анализ и распространение сведений
+              о киберугрозах. Его задача — помочь организации понимать,
+              какие угрозы могут быть актуальны, как они проявляются
+              и какие меры защиты следует рассмотреть.
+            </p>
+            <p>
+              В отличие от простого списка подозрительных IP-адресов
+              или доменов, полноценная разведывательная информация
+              должна содержать контекст: происхождение данных,
+              время наблюдения, степень уверенности и возможное
+              значение для защищаемой организации.
+            </p>
+          </div>
+
+          <div class="course-detail-block">
+            <h2>Разведывательный цикл CTI</h2>
+            <ul>
+              <li><strong>Постановка задачи:</strong> определение потребностей и вопросов заказчика.</li>
+              <li><strong>Планирование:</strong> выбор направлений, источников и критериев сбора.</li>
+              <li><strong>Сбор:</strong> получение технических и контекстных сведений.</li>
+              <li><strong>Обработка:</strong> нормализация, очистка и структурирование данных.</li>
+              <li><strong>Анализ:</strong> сопоставление признаков и формирование выводов.</li>
+              <li><strong>Распространение:</strong> подготовка результатов для заинтересованных специалистов.</li>
+              <li><strong>Обратная связь:</strong> оценка полезности материалов и уточнение следующих задач.</li>
+            </ul>
+          </div>
+
+          <div class="course-detail-block">
+            <h2>Программа обучения</h2>
+            <ul>
+              <li>Основные понятия Cyber Threat Intelligence.</li>
+              <li>Стратегический, оперативный и тактический уровни CTI.</li>
+              <li>Типы угроз и модели поведения атакующих.</li>
+              <li>Индикаторы компрометации (IOC) и их ограничения.</li>
+              <li>Домены, IP-адреса, URL и хеши файлов.</li>
+              <li>Анализ сетевой и доменной инфраструктуры.</li>
+              <li>Публичные источники информации о киберугрозах.</li>
+              <li>Платформы обмена данными об угрозах.</li>
+              <li>Основы анализа вредоносных файлов по безопасным отчётам.</li>
+              <li>Модель MITRE ATT&CK и тактики, техники и процедуры атакующих.</li>
+              <li>Структурирование данных и устранение дубликатов.</li>
+              <li>Оценка достоверности и актуальности индикаторов.</li>
+              <li>Связи между доменами, адресами и другими объектами.</li>
+              <li>Подготовка CTI-отчётов и аналитических сводок.</li>
+            </ul>
+          </div>
+
+          <div class="course-detail-block">
+            <h2>Индикаторы компрометации</h2>
+            <p>
+              Индикатор компрометации — технический признак, который
+              может свидетельствовать о подозрительной активности.
+              К таким признакам относятся доменные имена, IP-адреса,
+              сетевые адреса, хеши файлов и другие наблюдаемые значения.
+            </p>
+            <p>
+              Один индикатор сам по себе не всегда доказывает наличие
+              атаки. Его необходимо оценивать с учётом контекста,
+              времени наблюдения, источника и дополнительных признаков.
+            </p>
+          </div>
+
+          <div class="course-detail-block">
+            <h2>MITRE ATT&CK</h2>
+            <p>
+              Отдельный раздел знакомит с базой знаний MITRE ATT&CK,
+              которая систематизирует наблюдаемые тактики и техники
+              поведения противников. Рассматривается применение модели
+              для описания инцидентов, классификации действий и подготовки
+              аналитических материалов.
+            </p>
+          </div>
+
+          <div class="course-detail-block">
+            <h2>Практическая работа</h2>
+            <p>
+              Практика строится на учебных индикаторах, публичных
+              отчётах исследователей и специально подготовленных
+              наборах данных. Обучающийся учится проверять индикаторы,
+              сопоставлять их с контекстом и формировать краткие
+              аналитические выводы.
+            </p>
+          </div>
+
+          <div class="course-detail-block">
+            <h2>Результат обучения</h2>
+            <p>
+              По завершении программы обучающийся будет понимать
+              структуру разведывательного цикла CTI, различать основные
+              категории индикаторов, работать с открытыми источниками
+              данных об угрозах и готовить базовые аналитические сводки.
+            </p>
+          </div>
+
+          <div class="course-detail-block">
+            <h2>Стоимость</h2>
+            <p>Полная стоимость программы: <strong>2 500 ₽ / 29 $</strong>.</p>
+            <div class="course-detail-note">
+              Практические задания выполняются на учебных данных,
+              публичных отчётах и разрешённых исследовательских ресурсах.
+              Курс не предполагает проведение атак или несанкционированное
+              тестирование чужой инфраструктуры.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="logo footer-logo" href="../index.html"><span class="logo-mark">CLI</span><span class="logo-text">INTELLIGENCE</span></a>
+      <p>© 2026 CLI INTELLIGENCE. Все права защищены.</p>
+      <a href="https://t.me/cli_intelligence" target="_blank" rel="noopener noreferrer">Telegram автора</a>
+    </div>
+  </footer>
+
+  <div class="cart-overlay" id="cartOverlay" hidden>
+    <div class="cart-panel" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+      <div class="cart-header">
+        <h2 id="cartTitle">Корзина</h2>
+        <button type="button" id="closeCart" aria-label="Закрыть корзину">×</button>
+      </div>
+      <div class="cart-items" id="cartItems"><p class="cart-empty">Корзина пока пуста.</p></div>
+      <div class="cart-footer">
+        <div class="cart-total"><span>Итого</span><strong id="cartTotal">0 ₽</strong></div>
+        <button class="button button-primary checkout-button" id="checkoutButton" type="button" disabled>Оформить заказ через Telegram</button>
+        <p class="cart-note">После перехода в Telegram проверьте сообщение и отправьте его автору для оформления заказа.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("detailAddToCart").addEventListener("click", function () {
+      const cart = JSON.parse(localStorage.getItem("cli_intelligence_cart") || "[]");
+      if (!cart.includes(10)) {
+        cart.push(10);
+        localStorage.setItem("cli_intelligence_cart", JSON.stringify(cart));
+      }
+      this.textContent = "Добавлено в корзину";
+    });
+  </script>
+</body>
+</html>
