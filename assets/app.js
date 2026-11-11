@@ -29,15 +29,43 @@ function formatPrice(value) {
 
 function loadCart() {
   try {
-    const saved = JSON.parse(localStorage.getItem(CART_STORAGE_KEY));
-    return Array.isArray(saved) ? saved.filter(Number.isInteger) : [];
+    const saved = JSON.parse(
+      localStorage.getItem(CART_STORAGE_KEY)
+    );
+
+    return Array.isArray(saved)
+      ? [...new Set(saved.filter(id =>
+          Number.isInteger(id) && id > 0
+        ))]
+      : [];
   } catch {
     return [];
   }
 }
 
 function saveCart() {
-  localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart));
+  try {
+    localStorage.setItem(
+      CART_STORAGE_KEY,
+      JSON.stringify(cart)
+    );
+  } catch (error) {
+    console.error("Не удалось сохранить корзину:", error);
+  }
+}
+
+function syncCartFromStorage() {
+  cart = loadCart();
+
+  if (courses.length > 0) {
+    cart = cart.filter(id =>
+      courses.some(course => course.id === id)
+    );
+    saveCart();
+  }
+
+  renderCourses();
+  renderCart();
 }
 
 function getCartCourses() {
@@ -46,12 +74,35 @@ function getCartCourses() {
     .filter(Boolean);
 }
 
+function escapeHTML(value) {
+  return String(value).replace(/[&<>"']/g, character => {
+    const entities = {
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#39;"
+    };
+
+    return entities[character];
+  });
+}
+
 function renderCourses() {
-  const search = elements.search.value.trim().toLowerCase();
-  const sort = elements.sort.value;
+  if (!elements.grid) return;
+
+  const search = elements.search
+    ? elements.search.value.trim().toLowerCase()
+    : "";
+
+  const sort = elements.sort
+    ? elements.sort.value
+    : "default";
 
   let filtered = courses.filter(course => {
-    const searchable = `${course.title} ${course.description}`.toLowerCase();
+    const searchable =
+      `${course.title} ${course.description}`.toLowerCase();
+
     return searchable.includes(search);
   });
 
@@ -64,11 +115,18 @@ function renderCourses() {
   }
 
   if (sort === "name") {
-    filtered.sort((a, b) => a.title.localeCompare(b.title, "ru"));
+    filtered.sort((a, b) =>
+      a.title.localeCompare(b.title, "ru")
+    );
   }
 
-  elements.total.textContent = filtered.length;
-  elements.empty.hidden = filtered.length !== 0;
+  if (elements.total) {
+    elements.total.textContent = filtered.length;
+  }
+
+  if (elements.empty) {
+    elements.empty.hidden = filtered.length !== 0;
+  }
 
   if (filtered.length === 0) {
     elements.grid.innerHTML = "";
@@ -89,7 +147,9 @@ function renderCourses() {
         <p>${escapeHTML(course.description)}</p>
 
         <div class="course-card-bottom">
-          <div class="course-price">${formatPrice(course.price)}</div>
+          <div class="course-price">
+            ${formatPrice(course.price)}
+          </div>
 
           <div class="course-actions">
             <a
@@ -113,20 +173,6 @@ function renderCourses() {
   }).join("");
 }
 
-function escapeHTML(value) {
-  return String(value).replace(/[&<>"']/g, character => {
-    const entities = {
-      "&": "&amp;",
-      "<": "&lt;",
-      ">": "&gt;",
-      '"': "&quot;",
-      "'": "&#39;"
-    };
-
-    return entities[character];
-  });
-}
-
 function addToCart(id) {
   if (!courses.some(course => course.id === id)) return;
 
@@ -136,6 +182,7 @@ function addToCart(id) {
   }
 
   cart.push(id);
+
   saveCart();
   renderCourses();
   renderCart();
@@ -143,6 +190,7 @@ function addToCart(id) {
 
 function removeFromCart(id) {
   cart = cart.filter(courseId => courseId !== id);
+
   saveCart();
   renderCourses();
   renderCart();
@@ -155,9 +203,19 @@ function renderCart() {
     return sum + course.price;
   }, 0);
 
-  elements.cartCount.textContent = selected.length;
-  elements.cartTotal.textContent = formatPrice(total);
-  elements.checkout.disabled = selected.length === 0;
+  if (elements.cartCount) {
+    elements.cartCount.textContent = selected.length;
+  }
+
+  if (elements.cartTotal) {
+    elements.cartTotal.textContent = formatPrice(total);
+  }
+
+  if (elements.checkout) {
+    elements.checkout.disabled = selected.length === 0;
+  }
+
+  if (!elements.cartItems) return;
 
   if (selected.length === 0) {
     elements.cartItems.innerHTML = `
@@ -186,15 +244,25 @@ function renderCart() {
 }
 
 function openCart() {
+  if (!elements.cartOverlay) return;
+
   elements.cartOverlay.hidden = false;
   document.body.style.overflow = "hidden";
-  elements.closeCart.focus();
+
+  if (elements.closeCart) {
+    elements.closeCart.focus();
+  }
 }
 
 function closeCart() {
+  if (!elements.cartOverlay) return;
+
   elements.cartOverlay.hidden = true;
   document.body.style.overflow = "";
-  elements.openCart.focus();
+
+  if (elements.openCart) {
+    elements.openCart.focus();
+  }
 }
 
 function checkout() {
@@ -220,7 +288,8 @@ function checkout() {
     "Подскажите, пожалуйста, порядок оформления заказа."
   ].join("\n");
 
-  const url = `https://t.me/${TELEGRAM_USERNAME}?text=${encodeURIComponent(message)}`;
+  const url =
+    `https://t.me/${TELEGRAM_USERNAME}?text=${encodeURIComponent(message)}`;
 
   window.open(url, "_blank", "noopener,noreferrer");
 }
@@ -230,7 +299,9 @@ async function initialize() {
     const response = await fetch(COURSES_URL);
 
     if (!response.ok) {
-      throw new Error(`Ошибка загрузки каталога: ${response.status}`);
+      throw new Error(
+        `Ошибка загрузки каталога: ${response.status}`
+      );
     }
 
     const data = await response.json();
@@ -248,7 +319,10 @@ async function initialize() {
       Number.isFinite(course.usd)
     );
 
-    cart = cart.filter(id => courses.some(course => course.id === id));
+    cart = cart.filter(id =>
+      courses.some(course => course.id === id)
+    );
+
     saveCart();
 
     renderCourses();
@@ -257,46 +331,105 @@ async function initialize() {
   } catch (error) {
     console.error(error);
 
-    elements.grid.innerHTML = `
-      <div class="loading-state">
-        Не удалось загрузить каталог. Проверьте наличие файла
-        assets/courses.json и правильность его содержимого.
-      </div>
-    `;
+    if (elements.grid) {
+      elements.grid.innerHTML = `
+        <div class="loading-state">
+          Не удалось загрузить каталог. Проверьте наличие файла
+          assets/courses.json и правильность его содержимого.
+        </div>
+      `;
+    }
   }
 }
 
-elements.grid.addEventListener("click", event => {
-  const button = event.target.closest("[data-add-course]");
+/* Добавление курса из каталога */
+
+if (elements.grid) {
+  elements.grid.addEventListener("click", event => {
+    const button = event.target.closest("[data-add-course]");
+
+    if (!button) return;
+
+    addToCart(Number(button.dataset.addCourse));
+  });
+}
+
+/* Удаление курса из корзины */
+
+if (elements.cartItems) {
+  elements.cartItems.addEventListener("click", event => {
+    const button = event.target.closest("[data-remove-course]");
+
+    if (!button) return;
+
+    removeFromCart(Number(button.dataset.removeCourse));
+  });
+}
+
+/* Синхронизация после нажатия кнопки на странице курса */
+
+document.addEventListener("click", event => {
+  const button = event.target.closest("#detailAddToCart");
+
   if (!button) return;
 
-  addToCart(Number(button.dataset.addCourse));
+  queueMicrotask(() => {
+    syncCartFromStorage();
+  });
 });
 
-elements.cartItems.addEventListener("click", event => {
-  const button = event.target.closest("[data-remove-course]");
-  if (!button) return;
+/* Синхронизация между вкладками */
 
-  removeFromCart(Number(button.dataset.removeCourse));
-});
-
-elements.search.addEventListener("input", renderCourses);
-elements.sort.addEventListener("change", renderCourses);
-
-elements.openCart.addEventListener("click", openCart);
-elements.closeCart.addEventListener("click", closeCart);
-elements.checkout.addEventListener("click", checkout);
-
-elements.cartOverlay.addEventListener("click", event => {
-  if (event.target === elements.cartOverlay) {
-    closeCart();
+window.addEventListener("storage", event => {
+  if (event.key === CART_STORAGE_KEY) {
+    syncCartFromStorage();
   }
 });
+
+/* Поиск и сортировка */
+
+if (elements.search) {
+  elements.search.addEventListener("input", renderCourses);
+}
+
+if (elements.sort) {
+  elements.sort.addEventListener("change", renderCourses);
+}
+
+/* Управление корзиной */
+
+if (elements.openCart) {
+  elements.openCart.addEventListener("click", openCart);
+}
+
+if (elements.closeCart) {
+  elements.closeCart.addEventListener("click", closeCart);
+}
+
+if (elements.checkout) {
+  elements.checkout.addEventListener("click", checkout);
+}
+
+if (elements.cartOverlay) {
+  elements.cartOverlay.addEventListener("click", event => {
+    if (event.target === elements.cartOverlay) {
+      closeCart();
+    }
+  });
+}
+
+/* Закрытие корзины клавишей Escape */
 
 document.addEventListener("keydown", event => {
-  if (event.key === "Escape" && !elements.cartOverlay.hidden) {
+  if (
+    event.key === "Escape" &&
+    elements.cartOverlay &&
+    !elements.cartOverlay.hidden
+  ) {
     closeCart();
   }
 });
+
+/* Запуск сайта */
 
 initialize();
