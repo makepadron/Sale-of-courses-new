@@ -1,0 +1,308 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Практическое руководство OSINT — CLI INTELLIGENCE</title>
+  <meta name="description" content="Практический курс OSINT: поиск людей и цифровых идентификаторов, анализ изображений, доменов, инфраструктуры и открытых источников. 4000 ₽.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#090909">
+
+  <link rel="canonical" href="https://makepadron.github.io/Sale-of-courses/courses/practical-osint.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="CLI INTELLIGENCE">
+  <meta property="og:title" content="Практическое руководство OSINT">
+  <meta property="og:description" content="Практические методы поиска, сбора и анализа открытой информации.">
+  <meta property="og:url" content="https://makepadron.github.io/Sale-of-courses/courses/practical-osint.html">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Практическое руководство OSINT">
+  <meta name="twitter:description" content="Практическое обучение цифровой разведке.">
+
+  <link rel="stylesheet" href="../assets/style.css">
+  <script src="../assets/app.js" defer></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Практическое руководство OSINT",
+    "description": "Практические методы поиска, сбора, сопоставления и анализа информации из открытых источников.",
+    "provider": {
+      "@type": "Organization",
+      "name": "CLI INTELLIGENCE",
+      "url": "https://makepadron.github.io/Sale-of-courses/"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "4000",
+      "priceCurrency": "RUB",
+      "availability": "https://schema.org/InStock",
+      "url": "https://makepadron.github.io/Sale-of-courses/courses/practical-osint.html"
+    }
+  }
+  </script>
+
+  <style>
+    .course-detail {
+      padding: 100px 0;
+      min-height: 75vh;
+    }
+
+    .course-detail-content {
+      max-width: 850px;
+    }
+
+    .course-detail h1 {
+      margin-top: 25px;
+      font-size: clamp(38px, 6vw, 66px);
+      line-height: 1.15;
+      letter-spacing: -2px;
+    }
+
+    .course-detail-description {
+      margin-top: 25px;
+      color: #aaa;
+      font-size: 16px;
+      line-height: 1.9;
+      max-width: 700px;
+    }
+
+    .course-detail-price {
+      margin-top: 35px;
+      font-size: 32px;
+      font-weight: 700;
+    }
+
+    .course-detail-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    .course-detail-block {
+      margin-top: 75px;
+      padding-top: 35px;
+      border-top: 1px solid #292929;
+    }
+
+    .course-detail-block h2 {
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+
+    .course-detail-block p,
+    .course-detail-block li {
+      color: #999;
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .course-detail-block ul {
+      padding-left: 22px;
+    }
+
+    .course-detail-block li {
+      padding: 5px 0;
+    }
+
+    .course-detail-note {
+      margin-top: 25px;
+      padding: 20px;
+      border: 1px solid #292929;
+      border-radius: 10px;
+      color: #999;
+      font-size: 12px;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="../index.html">
+        <span class="logo-mark">CLI</span>
+        <span class="logo-text">INTELLIGENCE</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Навигация">
+        <a href="../index.html#about">О проекте</a>
+        <a href="../index.html#catalog">Каталог</a>
+        <a href="../index.html#author">Об авторе</a>
+        <a href="https://t.me/cli_intelligence" target="_blank" rel="noopener noreferrer">Контакты</a>
+      </nav>
+
+      <button class="cart-button" id="openCart" type="button">
+        Корзина <span id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="course-detail">
+      <div class="container">
+        <div class="course-detail-content">
+          <div class="section-label">CLI INTELLIGENCE / COURSE 03</div>
+
+          <h1>Практическое руководство OSINT</h1>
+
+          <p class="course-detail-description">
+            Практическая программа по применению методов разведки
+            на основе открытых источников. Основное внимание уделяется
+            поиску информации, работе с цифровыми идентификаторами,
+            исследованию веб-ресурсов, анализу технических данных
+            и проверке полученных результатов.
+          </p>
+
+          <div class="course-detail-price">4 000 ₽</div>
+
+          <div class="course-detail-actions">
+            <button class="button button-primary" id="detailAddToCart" type="button">
+              Добавить в корзину
+            </button>
+
+            <a class="button button-secondary" href="../index.html#catalog">
+              Вернуться в каталог
+            </a>
+          </div>
+
+          <div class="course-detail-block">
+            <h2>О программе</h2>
+            <p>
+              Практическое руководство знакомит с инструментами
+              и последовательностями действий, которые применяются
+              при проведении OSINT-исследований. Материал помогает
+              перейти от отдельных поисковых запросов к организованному
+              процессу сбора и проверки информации.
+            </p>
+          </div>
+
+          <div class="course-detail-block">
+            <h2>Основные направления обучения</h2>
+            <ul>
+              <li>Подготовка к исследованию и формирование гипотез.</li>
+              <li>Поиск по именам, псевдонимам и публичным идентификаторам.</li>
+              <li>Использование Sherlock, Maigret и WhatsMyName.</li>
+              <li>Расширенный поиск с помощью поисковых операторов.</li>
+              <li>Исследование публичных профилей и цифрового присутствия.</li>
+              <li>Анализ изображений, EXIF и визуальных совпадений.</li>
+              <li>Поиск сведений о доменах и DNS-инфраструктуре.</li>
+              <li>Исследование IP-адресов и сетевых сервисов.</li>
+              <li>Использование веб-архивов и истории сайтов.</li>
+              <li>Проверка электронной почты через законные публичные источники.</li>
+              <li>Анализ компаний и открытой деловой информации.</li>
+              <li>Геолокация изображений и анализ местности.</li>
+              <li>Сопоставление результатов из нескольких источников.</li>
+              <li>Оформление результатов и фиксация доказательств.</li>
+            </ul>
+          </div>
+
+          <div class="course-detail-block">
+            <h2>Практическая направленность</h2>
+            <p>
+              В процессе обучения рассматриваются сценарии поиска,
+              выбор подходящих инструментов, проверка совпадений
+              и оценка достоверности результатов. Особое внимание
+              уделяется тому, как отличать подтверждённые сведения
+              от предположений и ошибочных совпадений.
+            </p>
+          </div>
+
+          <div class="course-detail-block">
+            <h2>Результат обучения</h2>
+            <p>
+              Обучающийся сможет самостоятельно организовать базовое
+              OSINT-исследование, подобрать инструменты под поставленную
+              задачу, работать с различными категориями открытых источников
+              и подготовить структурированный отчёт с обоснованными выводами.
+            </p>
+          </div>
+
+          <div class="course-detail-block">
+            <h2>Стоимость</h2>
+            <p>
+              Полная стоимость программы:
+              <strong>4 000 ₽ / 47 $</strong>.
+            </p>
+
+            <div class="course-detail-note">
+              Все практические задания должны выполняться в законных
+              образовательных целях. Не допускаются незаконный доступ
+              к системам, преследование людей и нарушение приватности.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="logo footer-logo" href="../index.html">
+        <span class="logo-mark">CLI</span>
+        <span class="logo-text">INTELLIGENCE</span>
+      </a>
+
+      <p>© 2026 CLI INTELLIGENCE. Все права защищены.</p>
+
+      <a href="https://t.me/cli_intelligence" target="_blank" rel="noopener noreferrer">
+        Telegram автора
+      </a>
+    </div>
+  </footer>
+
+  <div class="cart-overlay" id="cartOverlay" hidden>
+    <div class="cart-panel" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+      <div class="cart-header">
+        <h2 id="cartTitle">Корзина</h2>
+        <button type="button" id="closeCart" aria-label="Закрыть корзину">×</button>
+      </div>
+
+      <div class="cart-items" id="cartItems">
+        <p class="cart-empty">Корзина пока пуста.</p>
+      </div>
+
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>Итого</span>
+          <strong id="cartTotal">0 ₽</strong>
+        </div>
+
+        <button class="button button-primary checkout-button" id="checkoutButton" type="button" disabled>
+          Оформить заказ через Telegram
+        </button>
+
+        <p class="cart-note">
+          После перехода в Telegram проверьте сообщение и отправьте
+          его автору для оформления заказа.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const addButton = document.getElementById("detailAddToCart");
+
+    addButton.addEventListener("click", () => {
+      const currentCart = JSON.parse(
+        localStorage.getItem("cli_intelligence_cart") || "[]"
+      );
+
+      if (!currentCart.includes(3)) {
+        currentCart.push(3);
+        localStorage.setItem(
+          "cli_intelligence_cart",
+          JSON.stringify(currentCart)
+        );
+      }
+
+      addButton.textContent = "Добавлено в корзину";
+    });
+  </script>
+</body>
+</html>
